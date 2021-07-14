@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+
+<head th:replace="layouts :: header" ></head>
+
+<body>
+<nav th:replace="layouts :: navbar"></nav>
+
+<form th:action="@{/role/save}" th:object=${appRole} method="POST">
+
+  <div class="container">
+     
+     <label for="roleName" class="form-label">Role Name</label>
+     
+     <input type="text" class="form-control" th:field="${appRole.roleName}">
+     
+     <button class="btn btn-primary">Save</button>
+     
+  </div>
+
+</form>
+
+</body>
+
+</html>

@@ -49,13 +49,13 @@ public class SpringSecurityConfigurations extends WebSecurityConfigurerAdapter {
 	
 	  @Override public void configure(HttpSecurity http) throws Exception {
 	  
-	  http.authorizeRequests() 
-	  .antMatchers("/","/**").hasRole("Admin")
-	  .antMatchers("/project/new").hasRole("Admin") 
-	  .antMatchers("/employee/new").hasRole("Admin") 
-	  .antMatchers("/role/newRole").hasRole("Admin") 
-	  .antMatchers("/role/userRole").hasRole("Admin")
-	  .and()
-      .formLogin().permitAll();
+			/*
+			 * http.authorizeRequests() .antMatchers("/","/**").hasRole("Admin")
+			 * .antMatchers("/project/new").hasRole("Admin")
+			 * .antMatchers("/employee/new").hasRole("Admin")
+			 * .antMatchers("/role/newRole").hasRole("Admin")
+			 * .antMatchers("/role/userRole").hasRole("Admin") .and()
+			 * .formLogin().permitAll();
+			 */
 	  }	
 }

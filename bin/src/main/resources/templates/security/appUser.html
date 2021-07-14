@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+
+<head th:replace="layouts :: header"></head>
+
+<body>
+<nav th:replace="layouts :: navbar"></nav>
+
+<h1 class="text-center">Create App User</h1>
+<form th:action="@{/role/saveUser}" th:object=${appUser} method="POST">
+
+  <div class="container">
+    
+    <div>
+    <label class="form-label" for="userName">User Name</label>
+    <input class="form-control" th:field="${appUser.userName}">
+    </div>
+    
+    <div>
+    <label class="form-label" for="password">Password</label>
+    <input class="form-control" type="password" th:field="${appUser.password}">
+    </div>
+    
+    <div>
+    <label class="form-label" for="mobileNumber">Mobile Number</label>
+    <input class="form-control" th:field="${appUser.mobileNumber}">
+    </div>
+    
+    <div>
+    <label class="form-label" for="email">Email</label>
+    <input class="form-control" type="email" th:field="${appUser.email}">
+    </div>
+    
+    <div>
+    <label class="form-lable" for="dateOfBirth">Date Of Birth</label>
+    <input class="form-control" type="date" th:field="${appUser.dateOfBirth}">
+    </div>
+    
+    <div>
+    <button class="btn btn-primary">Save</button>
+    </div>
+  
+  </div>
+
+</form>
+
+</body>
+</html>

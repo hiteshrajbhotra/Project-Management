@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head th:replace="layouts :: header" />
+
+<body>
+	<nav th:replace="layouts :: navbar"></nav>
+
+	<div class="container">
+
+		<form th:action="@{/role/saveUserRole}" th:object=${userRole} method="POST">
+
+			<div>
+				<label class="form-label">Select User</label>
+				<select class="form-select" th:each="user : ${userList}" th:field="${userRole.userId}">
+				    <option value="-1">--Select User--</option>
+					<option th:value="${user.userId}" th:text="${user.userName}"></option>
+				</select>
+			</div>
+
+			<div>
+				<label class="form-label">Select Role</label>
+				<select class="form-select" th:each="role : ${roleList}" th:field="${userRole.roleId}">
+				    <option value="-1">--Select Role--</option>
+					<option th:value="${role.roleId}" th:text="${role.roleName}"></option>
+				</select>
+			</div>
+
+			<div>
+				<button class="btn btn-primary">Save</button>
+			</div>
+
+		</form>
+
+
+	</div>
+
+
+</body>
+
+</html>
